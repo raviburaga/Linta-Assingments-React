@@ -1,27 +1,40 @@
 import React from "react";
+import { Link, Element } from "react-scroll";
 import NavbarComponent from "./NavbarComponent";
+const MailComponent = () => (
+  <>
+    <NavbarComponent />
 
-function ContactComponent(){
-    return(
-        <>
-            <NavbarComponent />
-            <section className="justify-center flex m-4  bg-red-500 rounded-xl flex-wrap hover:shadow-2xl">
-                <div className="text-2xl m-4" >
-                    <h1>
-                        <b>Contact</b>
-                    </h1>
-                </div>
-                <div className=" mt-12 p-10 m-4 text-xl leading-10 bg-green-500 rounded-3xl flex-wrap shadow-3xl">
-                    <form>
-                        Name :  <input className="border m-4 items-center rounded-3xl p-2" type="text" placeholder="Enter Your Name"></input> <br></br>
-                        Phone : <input className="border m-4 rounded-3xl p-2" type="tel" placeholder="Enter Phone Number"></input>  <br></br>
-                        E-mail : <input className="border m-4 rounded-3xl p-2" type="email" placeholder="Enter your mail" required></input> <br></br>
-                        Comments <br></br><textarea className="border items-center m-4 rounded-3xl p-2" placeholder="Enter Reason For Contacting me" cols="40"></textarea> <br></br>
-                        <button className="border  p-2 rounded-3xl transition duration-300" type="submit">Submit</button>
-                    </form>
-                </div>
-            </section>
-        </>
-    );
-}
-export default ContactComponent;
+    {/* <section className="flex flex-col items-center justify-center">
+      <img
+        className="mt-8"
+        src="https://thumbs.dreamstime.com/b/multiethnic-group-people-holding-letter-email-concept-43697983.jpg"
+        alt=".."
+      />
+      <div>
+        <Link to="form" smooth duration={500}>
+          <img
+            className="w-8 mt-16 md:mt-4 mb-72 md:w-12 ml-4 md:ml-16 cursor-pointer"
+            src="https://cdn-icons-png.flaticon.com/128/120/120902.png"
+            alt=".."
+          />
+        </Link>
+      </div>
+    </section> */}
+
+    <Element name="form">
+      <section className="h-screen flex items-center justify-center">
+        <div className="w-[85%] h-[60%] sm:w-[60%] rounded-xl flex items-center justify-center flex-col gap-8 bg-gradient-to-t from-green-500 to-red-500 shadow-2xl  border-2 border-black">
+          {/* <img className="w-[30%]" src="https://premierepro.net/wp-content/uploads/2008/12/SendEmail.png" alt="..."/> */}
+          <p className="text-2xl lg:text-3xl">ContactUs....</p>
+          <input type="mail" className=" w-[70%] md:w-[50%] py-2 border-2 border-red-500 text-center rounded-xl" placeholder="enter your email here..." />
+          <textarea className="md:w-[50%] w-[70%] border-2 border-red-500  py-2 rounded-xl text-center" placeholder="Share Your Thoughts......"></textarea>
+
+          <button type="submit" className=" w-[70%] md:w-[25%] border-2 border-red-500 py-3 text-xl bg-green-500 rounded-md hover:border-white hover:text-black text-white hover:bg-red-500  duration-1000">SUBMIT</button>
+        </div>
+      </section>
+    </Element>
+  </>
+);
+
+export default MailComponent;
