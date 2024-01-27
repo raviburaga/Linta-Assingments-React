@@ -12,10 +12,17 @@ function Calculator() {
         setinput("Invalid");
       }
     } else if (button === "BS") {
-      setinput((previnput) => previnput.slice(0, -1));
+      if(input === "Invalid"){
+        setinput("");
+      }
+      else{
+        setinput((previnput) => previnput.slice(0, -1));
+      }
+      
     } else if (input === "Invalid") {
       setinput(button);
-    } else {
+    } 
+    else {
       setinput((previnput) => previnput + button);
     }
   };
